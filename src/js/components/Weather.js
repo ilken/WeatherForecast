@@ -24,8 +24,7 @@ export default class Weather extends React.Component {
 
 		if(!localStorage.getItem('WEATHER_API_RESPONSE')) {
 			let url = 'http://api.openweathermap.org/data/2.5/forecast?id=2643744&appid=2e51af647faa378d0caabc1ca59a28c0';
-			//let url = "http://api.openweathermap.org/data/2.5/forecast?id=2643744&appid=c024988151d2439343bc4617141ac25d";
-			fetch(url)
+			fetch(url,{mode: 'cors'})
 			.then(response => response.json())
 			.then(data => {
 				console.log(data)
