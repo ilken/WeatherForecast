@@ -11,7 +11,7 @@ class WeatherStore extends EventEmitter {
 		localStorage.setItem('WEATHER_RAW_API_RESPONSE', JSON.stringify(data));
 		this.weatherData = this.filterWeatherData(data);
 		localStorage.setItem('WEATHER_API_RESPONSE', JSON.stringify(this.weatherData));
-		console.log(this.weatherData);
+
 		this.emit('init');
 	}
 

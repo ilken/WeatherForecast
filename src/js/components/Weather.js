@@ -31,7 +31,13 @@ export default class Weather extends React.Component {
 				WeatherActions.update(data);
 			})
 			.catch((err) => {
-				console.log("API ERROR:", err);
+				console.log("API FAILED:", err);
+				console.log("LOADING LOCAL DATA!");
+				fetch('data/london.json')
+				.then(response => response.json())
+				.then(data => {
+					WeatherActions.update(data);
+				})
 			});
 		}
 		else {
